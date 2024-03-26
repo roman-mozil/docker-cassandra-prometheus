@@ -9,8 +9,8 @@ This setup is running on Kubernetes cluster.
 Cassandra exposes metric endpoint at `http://ip:5556/metrics`.
 
 **Background:** there is 2 ways how we can monitor Cassandra:
-1)[jmx_exporter](https://github.com/prometheus/jmx_exporter)
-2)cassandra_exporter(there is multiple forks, [this](https://github.com/instaclustr/cassandra-exporter) is just a one example)
+1) [jmx_exporter](https://github.com/prometheus/jmx_exporter)
+2) cassandra_exporter(there is multiple forks, [this](https://github.com/instaclustr/cassandra-exporter) is just a one example)
 
 I have chosen the first option because:
 - jmx_exporter is still growing and developing by the community
@@ -25,7 +25,7 @@ Grafana v.10.3.1
 
 Dont forget to configure Prometheus scrapping endpoint and open K8 Service port. 
 
-To tell Prometheus where metrics are located - add `annotation` configs to Cassandra Kubernetes POD:
+To tell Prometheus where metrics are located - add `annotation` configs to Cassandra Kubernetes Service:
 
 ```
 apiVersion: apps/v1
@@ -64,7 +64,7 @@ Download .json or import by URL [this](https://grafana.com/grafana/dashboards/54
 
 ### Build docker image
 
-To build and tag image on MAC M1- run command from terminal: 
+To build and tag image on MAC M1 - run command from terminal: 
 `docker buildx build --platform linux/amd64 -t "my-cassandra-jmx-metrics:1.0" .`
 
 Verify that image was built:
