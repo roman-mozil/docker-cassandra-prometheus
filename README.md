@@ -16,10 +16,10 @@ I have chosen the first option because:
 - jmx_exporter is still growing and developing by the community
 - it supports mostly all versions of Cassandra
 
-Tested with versions:
-Cassandra v.4.1.3
-Prometheus v.2.49.1
-Grafana v.10.3.1
+Tested with versions: \
+Cassandra v.4.1.3 \
+Prometheus v.2.49.1 \
+Grafana v.10.3.1 
 
 ### Premetheus setup
 
@@ -64,10 +64,10 @@ Download .json or import by URL [this](https://grafana.com/grafana/dashboards/54
 
 ### Build docker image
 
-To build and tag image on MAC M1 - run command from terminal: 
+To build and tag image on MAC M1 - run command from terminal: \
 `docker buildx build --platform linux/amd64 -t "my-cassandra-jmx-metrics:1.0" .`
 
-Verify that image was built:
+Verify that image was built: \
 `docker images`
 
 ### Possible Issues
